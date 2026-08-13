@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo ao Mist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&display=swap" rel="stylesheet">
+<style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #18122B 0%, #251B37 100%);
+            padding: 20px;
+        }
+        
+        .card { 
+            background-color: #2A1E38;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            color: #E0D4FC;
+            font-size: 38px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .field {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #C2B5DE;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .campo {
+            padding: 12px 14px;
+            height: 44px;
+            border-radius: 8px;
+            width: 100%;
+            background-color: #1E152A;
+            color: #F1EAFF;
+            border: 1px solid #3B2D50;
+            outline: none;
+            font-size: 14px;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .campo:focus {
+            border-color: #A084DC;
+            box-shadow: 0 0 0 3px rgba(160, 132, 220, 0.15);
+        }
+
+        .campo::placeholder {
+            color: #6C5B88;
+        }
+
+        .campo:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px #1E152A inset !important;
+            -webkit-text-fill-color: #F1EAFF !important;
+        }
+
+        .btn-container {
+    text-align: center;
+    margin-top: 15px;
+            }
+
+            button {
+                background-color: #8E72C7;
+                color: #FFFFFF;
+                border-radius: 8px;
+                padding: 12px 0;
+                font-size: 15px;
+                font-weight: 600;
+                border: none;
+                cursor: pointer;
+                width: 100%; /* Ocupa toda a largura do card */
+                box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.25);
+                transition: all 0.2s ease;
+            }
+
+            button:hover {
+                background-color: #9D82D7;
+            }
+
+            .forgot-password {
+                margin-top: 18px;
+                text-align: center;
+            }
+
+            .forgot-password a {
+                color: #A090BC;
+                font-size: 13px;
+                text-decoration: none;
+            }
+
+            .forgot-password a:hover {
+                color: #E0D4FC;
+                text-decoration: underline;
+            }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                align-items: flex-start;
+                padding-top: 50px;
+            }
+
+            .card {
+                max-width: 100%;
+                padding: 30px 20px;
+                border-radius: 16px;
+                box-shadow: none;
+                background-color: transparent;
+                border: none;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .btn-container {
+                text-align: center;
+            }
+
+            button {
+                width: 100%;
+                padding: 14px;
+            }
+
+            .forgot-password {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+    <body>
+        
+        
+        <div class="card">
+            <h1>Mist</h1>
+
+        <form action="#" method="POST">
+            <div class="field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" class="campo" required placeholder="seu@email.com">
+            </div>
+
+            <div class="field">
+                <label for="password">Senha</label>
+                <input type="password" id="password" class="campo" required placeholder="••••••••">
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">Entrar</button>
+            </div>
+
+            <div class="forgot-password">
+                <a href="forgot-password.html">Esqueci minha senha</a>
+            </div>
+            
+            
+        </form>
+
+        <p id="message"></p>
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+            import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+            
+        document.querySelector('form').addEventListener('submit', function(evento) {
+            evento.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+        });
+        </script>
+    </body>
+</html>
