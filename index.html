@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mist - Dashboard</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+      background-color: #0f0f12;
+      color: #e0e0e0;
+      padding-bottom: 70px;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #17171c;
+      border-bottom: 1px solid #282830;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.2rem;
+      color: #9d4edd;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .container {
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+      }
+      .bottom-nav {
+        display: none;
+      }
+    }
+
+    .card {
+      background-color: #18181f;
+      border: 1px solid #2a2a35;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card-header h3 {
+      font-size: 1rem;
+      color: #c77dff;
+    }
+
+    .card-header i {
+      color: #9d4edd;
+      width: 18px;
+      height: 18px;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #141419;
+      border-top: 1px solid #282830;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item {
+      color: #a0a0b0;
+      text-decoration: none;
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-item i {
+      width: 20px;
+      height: 20px;
+    }
+
+    .nav-item.active {
+      color: #9d4edd;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i data-lucide="cloud-fog"></i> Mist</h1>
+    <span id="user-display">Usuario</span>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card-header">
+        <i data-lucide="wallet"></i>
+        <h3>Financeiro</h3>
+      </div>
+      <p>Saldo Geral: R$ 0,00</p>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <i data-lucide="calendar"></i>
+        <h3>Calendario</h3>
+      </div>
+      <p>Nenhum evento para hoje.</p>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <i data-lucide="file-text"></i>
+        <h3>Bloco de Notas</h3>
+      </div>
+      <p>Sua ultima anotacao aparecera aqui...</p>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <i data-lucide="dumbbell"></i>
+        <h3>Treino e Saude</h3>
+      </div>
+      <p>Status de hoje: Pendente</p>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <i data-lucide="map-pin"></i>
+        <h3>Locais Salvos</h3>
+      </div>
+      <p>Seus enderecos importantes.</p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active">
+      <i data-lucide="home"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i data-lucide="wallet"></i>
+      <span>Financas</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i data-lucide="calendar"></i>
+      <span>Agenda</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i data-lucide="file-text"></i>
+      <span>Notas</span>
+    </a>
+  </nav>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
