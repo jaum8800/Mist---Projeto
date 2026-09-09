@@ -28,4 +28,4 @@ git clone https://github.com/jaum8800/Nevoa.git
 2. Abra o arquivo Login.html no navegador ou utilizando a extensão Live Server no VS Code.
 
 Autor
-jaum8800.
+jaum8800
